@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 
 """
-The video highlights the importance of logging in machine learning projects. It enables error tracking, monitoring, audit trail creation, performance analysis, and informative output. Logging helps developers debug issues, track application behavior, and identify bottlenecks. It also provides valuable insights into the application's state, aiding both developers and users in understanding its state. Overall, logging is crucial for maintaining and improving machine learning project reliability.
+ It enables error tracking, monitoring, audit trail creation, performance analysis, and informative output. Logging helps developers debug issues, track application behavior, and identify bottlenecks. It also provides valuable insights into the application's state, aiding both developers and users in understanding its state. Overall, logging is crucial for maintaining and improving machine learning project reliability.
 """
 
 LOG_FILE =f"{ datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
@@ -17,5 +17,3 @@ logging.basicConfig(
     level=logging.INFO,
 )
 
-if __name__=="__main__":
-    logging.info("logging has started")
