@@ -124,7 +124,7 @@ celerybeat.pid
 venv/
 html/
 # Environments
-artifacts/
+#artifacts/
 .env
 .venv
 env/
