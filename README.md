@@ -59,8 +59,6 @@ git clone https://github.com/nik-744/end-to-end-house-price-prediction.git
 * Create an enviournment:
 
 ```bash
-bash
-Copy code
 # Create a virtual environment (using venv)
 python -m venv venv
 
