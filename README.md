@@ -54,7 +54,7 @@ Project Structure
 * Clone the repository:
 
 ```bash
-git clone https://github.com/your-repo/house-price-prediction.git
+git clone https://github.com/nik-744/end-to-end-house-price-prediction.git
 ```
 * Navigate to the project directory:
 
