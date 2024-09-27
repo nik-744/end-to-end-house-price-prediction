@@ -17,6 +17,8 @@ from src.utils import save_object
 @dataclass
 class DataTransformationConfig:
     preprocessor_obj_file_path=os.path.join('artifacts',"proprocessor.pkl")
+    combined_data_file_path=os.path.join("artifacts","combined_data.csv")
+
 
 class DataTransformation:
     def __init__(self):
@@ -85,6 +87,10 @@ class DataTransformation:
             train_df = train_df.drop(['date','waterfront','view','condition','street','country','statezip'],axis=1)
             test_df = test_df.drop(['date','waterfront','view','condition','street','country','statezip'],axis=1)
 
+            combined_df = pd.concat([train_df,test_df],ignore_index = True)
+            combined_df.to_csv(self.data_transformation_config.combined_data_file_path,index=False,header=True)
+
+            logging.info("Data Combined.")
 
             input_feature_train_df=train_df.drop(columns=[target_column_name],axis=1)
             target_feature_train_df=train_df[target_column_name]
@@ -128,7 +134,7 @@ class DataTransformation:
             return (
                 train_arr,
                 test_arr,
-                self.data_transformation_config.preprocessor_obj_file_path,
+                self.data_transformation_config.preprocessor_obj_file_path
             )
         except Exception as e:
             raise CustomException(e,sys)

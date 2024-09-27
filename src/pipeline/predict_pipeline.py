@@ -11,10 +11,12 @@ class PredictPipeline:
     def predict(self,features):
         try:
             model_path = os.path.join("artifacts","model.pkl")
-            preprocessor_path=os.path.join('artifacts','preprocessor.pkl')
+            preprocessor_path=os.path.join("artifacts","proprocessor.pkl")
             print("Before Loading")
             model=load_object(file_path=model_path)
+            print("model loaded succesfully.")
             preprocessor=load_object(file_path=preprocessor_path)
+            print("Preprocessor File loaded successfully.")
             print("After Loading")
             data_scaled=preprocessor.transform(features)
             preds=model.predict(data_scaled)
@@ -22,6 +24,7 @@ class PredictPipeline:
         except Exception as e:
             raise CustomException(e,sys)
         
+      
 class CustomData:
     def __init__ (self,
                 bedrooms:float,
@@ -42,17 +45,17 @@ class CustomData:
                 
                 self.sqft_living = sqft_living
                 
-                self.sqft_lot=sqft_lot,
+                self.sqft_lot=sqft_lot
                 
-                self.floors=floors,
+                self.floors=floors
                 
-                self.sqft_above=sqft_above,
+                self.sqft_above=sqft_above
                 
-                self.sqft_basement =sqft_basement,
+                self.sqft_basement =sqft_basement
 
-                self.yr_built= yr_built,
+                self.yr_built= yr_built
 
-                self.yr_renovated = yr_renovated,
+                self.yr_renovated = yr_renovated
 
                 self.city = city
     def get_data_as_data_frame(self):
