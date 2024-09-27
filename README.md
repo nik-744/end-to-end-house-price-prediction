@@ -56,10 +56,20 @@ Project Structure
 ```bash
 git clone https://github.com/nik-744/end-to-end-house-price-prediction.git
 ```
-* Navigate to the project directory:
+* Create an enviournment:
 
 ```bash
-cd house-price-prediction
+bash
+Copy code
+# Create a virtual environment (using venv)
+python -m venv venv
+
+# Activate the virtual environment
+# On Windows
+venv\Scripts\activate
+
+# On macOS/Linux
+source venv/bin/activate
 ```
 * Install the required packages:
 
